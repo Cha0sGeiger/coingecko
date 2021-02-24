@@ -28,12 +28,22 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: "" },
+            options: {
+              publicPath: "",
+              importLoaders: 1,
+              modules: true,
+            },
           },
           "css-loader",
           "postcss-loader",
           "sass-loader",
         ],
+        include: /\.module\.scss$/,
+      },
+      {
+        test: /\.(s[ac]|c)ss$/i,
+        use: ["style-loader", "css-loader"],
+        exclude: /\.module\.(s[ac]|c)ss$/i,
       },
       {
         test: /\.(ts|js)x?$/,
