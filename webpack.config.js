@@ -1,6 +1,6 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin  = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 let mode = "development";
 
@@ -11,6 +11,7 @@ if (process.env.NODE_Env === "production") {
 module.exports = {
   mode: "development",
 
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     assetModuleFilename: "images/[hash][ext][query]",
@@ -41,14 +42,19 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.html$/,
+        loader: "html-loader",
+      },
     ],
   },
   plugins: [
-      new CleanWebpackPlugin(),
-      new MiniCssExtractPlugin(), 
-      new HtmlWebpackPlugin({
-      template: "./src/index.html"
-  })],
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/index.html",
+    }),
+  ],
 
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
@@ -57,5 +63,6 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
     hot: true,
+    port: 9001,
   },
 };
