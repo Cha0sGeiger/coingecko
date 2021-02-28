@@ -8,12 +8,10 @@ export interface CoinListItemProps {
 
 export const ListItem = ({ name, symbol, platform }: CoinListItemProps) => {
   return (
-    <div className="list_item">
-      <h4>{name}</h4>
-      <div>
-        <span>{symbol}</span>
-        <span>{platform}</span>
-      </div>
+    <div className="list_item m-0-auto">
+      <div className="list-item-property">{name}</div>
+      <div className=" list-item-property">{symbol}</div>
+      <div className=" list-item-property">{platform}</div>
     </div>
   );
 };
