@@ -22,7 +22,7 @@ export const Dashboard = () => {
   const [filter, setFilter] = useState(false);
   const data: ApiData[] = getCoinListFromSessionOrStorage();
   const [page, setPage] = useState(0);
-  const [pageReset, setPageReset] = useState(0);
+  const [pageReset, setPageReset] = useState<number>(0);
   const [itemsToRender, setItemsToRender] = useState(initialStateItemsToRender);
   const filteredData = data?.filter((item) =>
     item.platforms['ethereum']?.includes('0x')
@@ -34,6 +34,7 @@ export const Dashboard = () => {
   const dataToShow = filter ? filteredData : data;
 
   const onPageChange = (data: { selected: number }) => {
+    setPageReset(data.selected);
     setItemsToRender({
       loadFrom: data.selected * 10,
       loadTo: data.selected * 10 + 10,
@@ -42,6 +43,8 @@ export const Dashboard = () => {
 
   const onFilterChange = useCallback(
     (value: boolean) => {
+      setPageReset(0);
+      setItemsToRender(initialStateItemsToRender);
       setFilter(value);
     },
     [setFilter]
@@ -50,8 +53,7 @@ export const Dashboard = () => {
   useEffect(() => {
     filter && setPage(Math.ceil(filteredData.length / 10));
     !filter && setPage(Math.ceil(data.length / 10));
-    setPageReset(0);
-  }, [data, filter]);
+  }, [filteredData, data, filter]);
 
   return (
     <section className="dashboard">

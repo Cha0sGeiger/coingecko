@@ -7,7 +7,7 @@ interface PlatformCardProps {
 export const PlatformCard = ({ ethereumPercentage }: PlatformCardProps) => {
   return (
     <div className="card txt-center">
-      <h4>Ethereum Platform</h4>
+      <h4>Coins on Ethereum</h4>
       <div>
         <span className="number_circle">{ethereumPercentage || 0} %</span>
       </div>
