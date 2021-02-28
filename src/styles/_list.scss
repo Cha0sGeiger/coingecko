@@ -1,5 +1,41 @@
+@import './variables';
+
+.list {
+  width: 600px;
+  min-width: 450px;;
+  background-color: #fff;
+  padding: 0 30px;
+}
+
 .list_item {
+  max-width: 800px;
+  border-top: 1px solid $grey;
   display: flex;
-  justify-content: space-around;
+  flex-grow: 1;
   padding: 5px;
+
+  .list-item-property {
+    margin: 0 auto;
+    flex: 1 1 0;
+    font-size: 1.25rem;
+    padding: 15px 0;
+    text-align: center;
+  }
+}
+
+.list_header {
+  max-width: 800px;
+  height: 44px;
+  display: flex;
+
+  color: $black-text;
+  font-weight: 600;
+
+  .list_header_property {
+    margin: 0 auto;
+    flex: 1 1 0;
+    font-size: 0.8rem;
+    padding: 15px 0;
+    text-align: center;
+  }
 }

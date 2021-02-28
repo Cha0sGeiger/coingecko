@@ -1,0 +1,23 @@
+@import './variables';
+
+.card {
+  width: 180px;
+  height: 100px;
+  border-radius: 4px;
+  background-color: $white;
+  margin: 16px 30px 0 30px;
+}
+
+.number_circle {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+
+  background: #fff;
+  border: 2px solid $orange;
+  color: $black-text;
+  text-align: center;
+
+  font: 16px;
+}
