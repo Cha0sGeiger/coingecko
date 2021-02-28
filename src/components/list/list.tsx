@@ -5,5 +5,5 @@ interface ListProps {
 }
 
 export const List = ({ children }: ListProps) => {
-  return <ul className="list m-0-auto">{children}</ul>;
+  return <ul className="list">{children}</ul>;
 };

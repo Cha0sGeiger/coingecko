@@ -31,12 +31,11 @@ html {
   position: relative;
 }
 
-.center {
+.justify-center {
   justify-content: center;
-  align-items: center;
 }
 
-.around {
+.justify-around {
   justify-content: space-around;
 }
 
@@ -46,6 +45,14 @@ html {
 
 .m-0-auto {
   margin: 0 auto;
+}
+
+.padding-right-30 {
+  padding-right: 30px;
+}
+
+.padding-left-30 {
+  padding-left: 30px;
 }
 
 h1 {
@@ -60,14 +67,6 @@ h3 {
   margin: 14px 20px;
   color: $orange;
   font-weight: 600;
-}
-
-h4 {
-  text-align: right;
-}
-
-h5 {
-  text-align: right;
 }
 
 h6 {
@@ -90,7 +89,7 @@ button {
   padding: 9px;
   width: 160px;
   white-space: nowrap;
-  background-color: darkcyan;
+  background-color: $teal;
   color: whitesmoke;
   font-size: 1.2rem;
   font-weight: 600;
@@ -100,11 +99,11 @@ button {
   text-transform: uppercase;
 
   &:hover {
-    background-color: lighten(darkcyan, 7%);
+    background-color: lighten($teal, 7%);
   }
 }
 
 button:active {
-  box-shadow: 0 0 0 white;
+  box-shadow: 0 0 0 $white;
   margin: 3px 5px 2px 5px;
 }

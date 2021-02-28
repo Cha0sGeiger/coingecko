@@ -1,8 +1,10 @@
 @import './variables';
 
 .list {
-  max-width: 900px;
+  width: 600px;
+  min-width: 450px;;
   background-color: #fff;
+  padding: 0 30px;
 }
 
 .list_item {

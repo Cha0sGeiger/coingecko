@@ -3,11 +3,14 @@ import { Footer } from './components/footer';
 import { Dashboard } from './pages/dashboard';
 import { StartPage } from './pages/start-page';
 import { getCoinsList } from './services/api';
+import { saveCoinListToSessionOrLocalStorage } from './utils/sessionStorage';
 
 const App = () => {
-  // useEffect(() => {
-  //   getCoinsList.then((response) => console.log(response, 'response data'));
-  // }, []);
+  useEffect(() => {
+    getCoinsList.then((response) =>
+      saveCoinListToSessionOrLocalStorage(response)
+    );
+  }, []);
 
   return (
     <>

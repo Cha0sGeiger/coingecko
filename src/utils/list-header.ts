@@ -1,1 +1,1 @@
-export const LIST_HEADERS: string[] = ['NAME', 'SYM', 'PLATFORM'];
+export const LIST_HEADERS: string[] = ['NAME', 'SYM'];
