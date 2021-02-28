@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import { Footer } from './components/footer';
+import { BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import { Dashboard } from './pages/dashboard';
 import { StartPage } from './pages/start-page';
 import { getCoinsList } from './services/api';
