@@ -1,8 +1,10 @@
-@use "variables";
+@import './variables';
 
 :root {
   padding: 0;
   margin: 0;
+
+  --spacing-unit: 6px;
 }
 
 body,
@@ -13,11 +15,83 @@ html {
   padding: 0;
 }
 
-h1 {
-  font-size: 3rem;
-  font-weight: 700;
+.flex {
+  display: flex;
 }
 
-h4 {
-  color: blue;
+.align-item-center {
+  align-items: center;
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.relative {
+  position: relative;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+}
+
+.around {
+  justify-content: space-around;
+}
+
+.m-auto-0 {
+  margin: auto 0;
+}
+
+.m-0-auto {
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 3.45rem;
+  font-weight: 700;
+  color: $white;
+  margin: 22px 0;
+}
+
+h3 {
+  font-size: 2rem;
+  margin: 14px 20px;
+  color: $orange;
+  font-weight: 600;
+}
+
+h6 {
+  font-size: 0.8rem;
+  margin: 9px 8px;
+  color: $orange;
+}
+
+img {
+  padding: 0 20px;
+}
+
+button {
+  border-radius: 4px;
+  padding: 9px;
+  width: 160px;
+  white-space: nowrap;
+  background-color: darkcyan;
+  color: whitesmoke;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 1px solid black;
+  outline: none;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover {
+    background-color: lighten(darkcyan, 7%);
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 white;
+  margin: 3px 5px 2px 5px;
 }

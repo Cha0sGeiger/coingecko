@@ -1,0 +1,22 @@
+.start-page {
+  background-color: cadetblue;
+  height: calc(100vh - 30px);
+}
+
+.start-page-container {
+  padding: 160px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.button-container {
+  padding-top: calc(12 * var(--spacing-unit));
+}
+
+footer {
+  height: 33px;
+  width: 100vw;
+  background-color: darkcyan;
+  position: absolute;
+  bottom: 0;
+}
