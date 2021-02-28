@@ -1,14 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import ReactPaginate from 'react-paginate';
 
 interface PaginationProps {
   pageCount: number;
   onPageClick: (selectedItem: { selected: number }) => void;
+  forcePage: number;
 }
 
-export const Pagination = ({ pageCount, onPageClick }: PaginationProps) => {
+export const Pagination = ({
+  pageCount,
+  onPageClick,
+  forcePage,
+}: PaginationProps) => {
   return (
     <ReactPaginate
+      forcePage={forcePage}
       previousLabel={'previous'}
       nextLabel={'next'}
       breakLabel={'...'}

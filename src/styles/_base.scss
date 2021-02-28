@@ -32,7 +32,10 @@
     margin: 0 5px;
     border: none;
   }
-  li.active{
+  li.active {
     color: $teal;
+  }
+  a {
+    outline: none;
   }
 }

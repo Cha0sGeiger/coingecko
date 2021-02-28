@@ -3,6 +3,7 @@
 :root {
   padding: 0;
   margin: 0;
+  overflow: hidden;
 
   --spacing-unit: 6px;
 }
@@ -45,14 +46,6 @@ html {
 
 .m-0-auto {
   margin: 0 auto;
-}
-
-.padding-right-30 {
-  padding-right: 30px;
-}
-
-.padding-left-30 {
-  padding-left: 30px;
 }
 
 h1 {

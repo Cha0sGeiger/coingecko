@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import { Footer } from './components/footer';
 import { Dashboard } from './pages/dashboard';
 import { StartPage } from './pages/start-page';
@@ -14,7 +15,12 @@ const App = () => {
 
   return (
     <>
-      <Dashboard />
+      <Router>
+        <Switch>
+          <Route exact path="/" component={StartPage} />
+          <Route path="/coins-list" component={Dashboard} />
+        </Switch>
+      </Router>
     </>
   );
 };

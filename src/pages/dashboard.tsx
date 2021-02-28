@@ -8,7 +8,12 @@ import { getCoinListFromSessionOrStorage } from '../utils/sessionStorage';
 import { ApiData } from '../services/api';
 import { Pagination } from '../components/pagination/pagination';
 
-const initialStateItemsToRender = {
+interface InitialStateValue {
+  loadFrom: number;
+  loadTo: number;
+}
+
+const initialStateItemsToRender: InitialStateValue = {
   loadFrom: 0,
   loadTo: 10,
 };
@@ -17,6 +22,7 @@ export const Dashboard = () => {
   const [filter, setFilter] = useState(false);
   const data: ApiData[] = getCoinListFromSessionOrStorage();
   const [page, setPage] = useState(0);
+  const [pageReset, setPageReset] = useState(0);
   const [itemsToRender, setItemsToRender] = useState(initialStateItemsToRender);
   const filteredData = data?.filter((item) =>
     item.platforms['ethereum']?.includes('0x')
@@ -44,7 +50,8 @@ export const Dashboard = () => {
   useEffect(() => {
     filter && setPage(Math.ceil(filteredData.length / 10));
     !filter && setPage(Math.ceil(data.length / 10));
-  }, [data]);
+    setPageReset(0);
+  }, [data, filter]);
 
   return (
     <section className="dashboard">
@@ -56,7 +63,6 @@ export const Dashboard = () => {
               <PlatformCard ethereumPercentage={ethereumPercentage} />
             ) : null}
           </div>
-
           <div>
             <List>
               <ListHeader />
@@ -70,7 +76,11 @@ export const Dashboard = () => {
                   );
                 })}
             </List>
-            <Pagination pageCount={page} onPageClick={onPageChange} />
+            <Pagination
+              forcePage={pageReset}
+              pageCount={page}
+              onPageClick={onPageChange}
+            />
           </div>
         </div>
       </main>
