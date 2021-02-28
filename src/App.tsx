@@ -1,17 +1,10 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "./App.scss";
+import React, { useEffect, useState } from 'react';
+import { getCoinsList } from './services/api';
+import './App.scss';
 
 const App = () => {
-  const apiCall = axios
-    .get("https://api.coingecko.com/api/v3/coins/list?include_platform=true")
-    .then((res) => {
-      const data = res.data;
-      return data;
-    });
-
   useEffect(() => {
-    apiCall.then((response) => console.log(response));
+    getCoinsList.then((response) => console.log(response, 'response data'));
   }, []);
 
   return (
@@ -21,11 +14,11 @@ const App = () => {
         <h1>Hey</h1>
       </div>
       <div>
-        Icons made by{" "}
+        Icons made by{' '}
         <a href="https://www.freepik.com" title="Freepik">
           Freepik
-        </a>{" "}
-        from{" "}
+        </a>{' '}
+        from{' '}
         <a href="https://www.flaticon.com/" title="Flaticon">
           www.flaticon.com
         </a>
