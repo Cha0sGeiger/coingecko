@@ -1,14 +1,23 @@
 @use "variables";
 
-body {
+:root {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
   margin: 0;
   box-sizing: border-box;
   border: 0;
   padding: 0;
-  background: #e0eeee;
 }
 
 h1 {
   font-size: 3rem;
   font-weight: 700;
+}
+
+h4 {
+  color: blue;
 }

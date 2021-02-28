@@ -1,60 +1,50 @@
-const path = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-let mode = "development";
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+let mode = 'development';
 
-if (process.env.NODE_Env === "production") {
-  mode = "production";
+if (process.env.NODE_Env === 'production') {
+  mode = 'production';
 }
 
 module.exports = {
-  mode: "development",
+  mode: 'development',
 
-  entry: "./src/index.js",
+  entry: './src/index.js',
   output: {
-    path: path.resolve(__dirname, "dist"),
-    assetModuleFilename: "images/[hash][ext][query]",
+    path: path.resolve(__dirname, 'dist'),
+    assetModuleFilename: 'images/[hash][ext][query]',
   },
 
   module: {
     rules: [
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
-        type: "asset",
+        type: 'asset',
       },
       {
         test: /\.(s[ac]|c)ss$/i,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: "",
-              importLoaders: 1,
-              modules: true,
-            },
+            options: { publicPath: '' },
           },
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ],
-        include: /\.module\.scss$/,
-      },
-      {
-        test: /\.(s[ac]|c)ss$/i,
-        use: ["style-loader", "css-loader"],
-        exclude: /\.module\.(s[ac]|c)ss$/i,
       },
       {
         test: /\.(ts|js)x?$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
         },
       },
       {
         test: /\.html$/,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
     ],
   },
@@ -62,16 +52,16 @@ module.exports = {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: "./src/index.html",
+      template: './src/index.html',
     }),
   ],
 
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: ['.tsx', '.ts', '.js'],
   },
-  devtool: "source-map",
+  devtool: 'source-map',
   devServer: {
-    contentBase: "./dist",
+    contentBase: './dist',
     hot: true,
     port: 9001,
   },

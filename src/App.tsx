@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { getCoinsList } from './services/api';
-import './App.scss';
 
 const App = () => {
-  useEffect(() => {
-    getCoinsList.then((response) => console.log(response, 'response data'));
-  }, []);
+  // useEffect(() => {
+  //   getCoinsList.then((response) => console.log(response, 'response data'));
+  // }, []);
 
   return (
     <>
