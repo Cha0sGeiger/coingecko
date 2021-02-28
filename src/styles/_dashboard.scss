@@ -2,7 +2,7 @@
 
 .dashboard {
   background-color: $teal;
-  height: 100vh;
-  padding: 110px 45px 40px 45px;
-  overflow: auto;
+  height: 100%;
+  padding: 110px 45px 0 45px;
+  overflow: hidden;
 }

@@ -5,7 +5,7 @@
   height: 100px;
   border-radius: 4px;
   background-color: $white;
-  margin: 16px 30px 0 30px;
+  margin: 16px 30px 0 0;
 }
 
 .number_circle {
@@ -20,4 +20,19 @@
   text-align: center;
 
   font: 16px;
+}
+
+.pagination {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  max-width: 660px;
+  li {
+    margin: 0 5px;
+    border: none;
+  }
+  li.active{
+    color: $teal;
+  }
 }
